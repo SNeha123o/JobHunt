@@ -19,10 +19,10 @@ function WebsiteLinkUploader() {
 
   return (
     <div>
-      <div>
+      <div className="md:w-3/5 flex  md:gap-x-20">
       
         <input
-        className='bg-gray-300  px-7 py-2 ml-12 w-64'
+       className="p-2 bg-gray-300 focus:outline-none w-3/5"
           type="text"
           value={linkInput}
           onChange={handleInputChange}

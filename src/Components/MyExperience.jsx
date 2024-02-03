@@ -70,82 +70,65 @@ const MyExperience = () => {
   return (
     <>
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>My Experience</h1>
+      
       {experiences.map((experience, index) => (
         <div key={index}>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>Job Title<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <input
-                className='bg-gray-300  px-7 py-2 ml-64 w-64'
-                type="text"
-                value={experience.jobTitle}
-                required
-                onChange={(e) => {
-                  const newExperiences = [...experiences];
-                  newExperiences[index].jobTitle = e.target.value;
-                  setExperiences(newExperiences);
-                }}
-              />
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex' style={{ marginRigt: '100px'}}>Company<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <input
-                className='bg-gray-300  px-7 py-2 ml-60 w-64'
-                type="text"
-                value={experience.company}
-                required
-                onChange={(e) => {
-                  const newExperiences = [...experiences];
-                  newExperiences[index].company = e.target.value;
-                  setExperiences(newExperiences);
-                }}
-              />
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex' style={{ marginRigt: '25px'}}>Location<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <input
-                className='bg-gray-300  px-7 py-2 ml-60 w-64'
-                type="text"
-                value={experience.location}
-                required
-                onChange={(e) => {
-                  const newExperiences = [...experiences];
-                  newExperiences[index].location = e.target.value;
-                  setExperiences(newExperiences);
-                }}
-              />
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex' style={{ marginLeft: '8px'}}>From<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <DatePicker
-                className='bg-gray-300  px-7 py-2 ml-64 w-64'
-                selected={experience.from}
-                onChange={(date) => {
-                  const newExperiences = [...experiences];
-                  newExperiences[index].from = date;
-                  setExperiences(newExperiences);
-                }}
-              />
-            </label>
-          </form>
-          {!experience.isCurrentlyPursuing && (
-            <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-              <label className='flex'  style={{ marginLeft: '25px'}}>To<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-                <DatePicker
-                  className='bg-gray-300 py-2 ml-64 w-64'
-                  selected={experience.to}
-                  onChange={(date) => {
-                    const newExperiences = [...experiences];
-                    newExperiences[index].to = date;
-                    setExperiences(newExperiences);
-                  }}
-                />
-              </label>
-            </form>
-          )}
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
+          <form className="mx-4 sm:mx-6 lg:mx-8 my-5 flex flex-col justify-start gap-y-7">
+          <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Job Title<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <input type="text" className="p-2 bg-gray-300 focus:outline-none w-2/5"
+                   value={experience.jobTitle}
+                   required
+                   onChange={(e) => {
+                     const newExperiences = [...experiences];
+                     newExperiences[index].jobTitle = e.target.value;
+                     setExperiences(newExperiences);
+                   }}/>
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Company<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <input type="text" className="p-2 bg-gray-300 focus:outline-none w-2/5"
+                   value={experience.company}
+                   required
+                   onChange={(e) => {
+                     const newExperiences = [...experiences];
+                     newExperiences[index].company = e.target.value;
+                     setExperiences(newExperiences);
+                   }}/>
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Location<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <input type="text" className="p-2 bg-gray-300 focus:outline-none w-2/5"
+                    value={experience.location}
+                    required
+                    onChange={(e) => {
+                      const newExperiences = [...experiences];
+                      newExperiences[index].location = e.target.value;
+                      setExperiences(newExperiences);
+                    }}
+                    />
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">From<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <DatePicker  className="p-2 bg-gray-300 focus:outline-none w-3/5"
+                    selected={experience.from}
+                    onChange={(date) => {
+                      const newExperiences = [...experiences];
+                      newExperiences[index].from = date;
+                      setExperiences(newExperiences);
+                    }}
+                    />
+                   </div>
+                   {!experience.isCurrentlyPursuing && (
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">To<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <DatePicker  className="p-2 bg-gray-300 focus:outline-none w-3/5"
+                     selected={experience.to}
+                     onChange={(date) => {
+                       const newExperiences = [...experiences];
+                       newExperiences[index].to = date;
+                       setExperiences(newExperiences);
+                     }}
+                    />
+                   </div>
+         )}
+          
+          <div className="w-3/5 flex gap-x-24">
             <label className='flex'>
               <input
                 type="checkbox"
@@ -155,22 +138,20 @@ const MyExperience = () => {
               />
               I currently work here
             </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>Role description:
-              <input
-                className='bg-gray-300  px-7 py-2 ml-40 w-96'
-                type="text"
-                value={experience.role}
-                required
-                onChange={(e) => {
-                  const newExperiences = [...experiences];
-                  newExperiences[index].role = e.target.value;
-                  setExperiences(newExperiences);
-                }}
-              />
-            </label>
-          </form>
+          </div>
+          <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Role description:<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <input type="text" className="p-2 bg-gray-300 focus:outline-none w-2/5"
+                    value={experience.role}
+                    required
+                    onChange={(e) => {
+                      const newExperiences = [...experiences];
+                      newExperiences[index].role = e.target.value;
+                      setExperiences(newExperiences);
+                    }}
+                    />
+                   </div>
+          
+           </form>
         </div>
       ))}
       <button className='text-blue-700' style={{ marginRight: '1000px', fontSize:'20px'}}  onClick={addExperience}>+Add Experience</button>
@@ -178,24 +159,20 @@ const MyExperience = () => {
       <h2 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Education</h2>
       {education.map((edu, index) => (
         <div key={index}>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>School<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <input
-                className='bg-gray-300  px-7 py-2 ml-60 w-64'
-                type="text"
-                value={edu.school}
-                required
-                onChange={(e) => {
-                  const newEducation = [...education];
-                  newEducation[index].school = e.target.value;
-                  setEducation(newEducation);
-                }}
-              />
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>Degree<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-            <select className='bg-gray-300  px-7 py-2 ml-60 w-64'>
+          <form className="mx-4 sm:mx-6 lg:mx-8 my-5 flex flex-col justify-start gap-y-7">
+          <div className="w-3/5 flex gap-x-24"><label className="w-1/4">School<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <input type="text" className="p-2 bg-gray-300 focus:outline-none w-2/5"
+                    value={edu.school}
+                    required
+                    onChange={(e) => {
+                      const newEducation = [...education];
+                      newEducation[index].school = e.target.value;
+                      setEducation(newEducation);
+                    }}
+                    />
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Degree<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+                    <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
          <option value="Select">Please Select</option>
          <option value="B.tech">B.tech</option>
          <option value="Bsc">Bsc.</option>
@@ -204,11 +181,9 @@ const MyExperience = () => {
          <option value="Phd">Phd</option>
          <option value="Other">Other</option>
       </select>
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>Field<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-            <select className='bg-gray-300  px-7 py-2 ml-64 w-64'>
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Field<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+                   <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
          <option value="Select">PleaseSelect</option>
          <option value="ComputerScience">Computer Science</option>
          <option value="Engineering">Engineering</option>
@@ -220,33 +195,28 @@ const MyExperience = () => {
          <option value="Medicine">Medicine</option>
          <option value="Other">Other</option>
       </select>
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex'>From<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <DatePicker
-                className='bg-gray-300  px-7 py-2 ml-64 w-64'
-                selected={edu.from}
-                onChange={(date) => {
-                  const newEducation = [...education];
-                  newEducation[index].from = date;
-                  setEducation(newEducation);
-                }}
-              />
-            </label>
-          </form>
-          <form className='mx-4 sm:mx-6 lg:mx-8 my-5'>
-            <label className='flex' style={{ marginLeft: '25px'}}>To<span style={{ color: 'red', fontSize: '1.5rem' }}>*</span>:
-              <DatePicker
-                className='bg-gray-300  px-7 py-2 ml-64 w-64'
-                selected={edu.to}
-                onChange={(date) => {
-                  const newEducation = [...education];
-                  newEducation[index].to = date;
-                  setEducation(newEducation);
-                }}
-              />
-            </label>
+          </div>
+          <div className="w-3/5 flex gap-x-24"><label className="w-1/4">From<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <DatePicker  className="p-2 bg-gray-300 focus:outline-none w-3/5"
+                    selected={edu.from}
+                    onChange={(date) => {
+                      const newEducation = [...education];
+                      newEducation[index].from = date;
+                      setEducation(newEducation);
+                    }}
+                    />
+                   </div>
+                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">To<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+          <DatePicker  className="p-2 bg-gray-300 focus:outline-none w-3/5"
+                    selected={edu.to}
+                    onChange={(date) => {
+                      const newEducation = [...education];
+                      newEducation[index].to = date;
+                      setEducation(newEducation);
+                    }}
+                    />
+                   </div>         
+          
           </form>
         </div>
       ))}
@@ -254,7 +224,8 @@ const MyExperience = () => {
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Certifications</h1>
       <Certificates />
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Skills</h1>
-      <Skills />
+     <Skills />
+      
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Websites</h1>
       <Websites />
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Social Media URL</h1>

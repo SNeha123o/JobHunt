@@ -29,15 +29,14 @@ function SkillInput() {
 
   return (
     <div>
-          <h1 >Type to Add Skills</h1>
-      <div>
+      <div className="md:w-3/5 flex md:gap-x-24">
         <input
-         className='bg-gray-300  px-7 py-2 ml-12 w-64'
+         className="p-2 bg-gray-300 focus:outline-none w-3/5"
           type="text"
           value={inputValue}
           onChange={handleChange} 
         />
-       <button className='ml-5 text-blue-700' onClick={handleAddSkill}>Add</button>
+       <button className=' text-blue-700' onClick={handleAddSkill}>Add</button>
       </div>
       <div>
         <ul>

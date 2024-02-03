@@ -30,21 +30,21 @@ function ProfileUrlUploader() {
 
   return (
     <div>
-      <div>
+      <div className=" md:gap-x-20">
       <button onClick={handleAddLinkedinUrl}>LinkedIn Profile URL</button>
         <input
           type="text"
-          className='bg-gray-300  px-7 py-2 ml-12 w-64 my-5'
+          className="p-2 bg-gray-300 focus:outline-none w-3/5 my-5"
           value={linkedinInput}
           onChange={handleLinkedinInputChange}
         />
         
       </div>
-      <div>
+      <div className=" md:gap-x-20">
       <button onClick={handleAddGithubUrl}>GitHub Profile URL</button>
         <input
           type="text"
-          className='bg-gray-300  px-7 py-2 ml-12 w-64'
+          className="p-2 bg-gray-300 focus:outline-none w-3/5"
           value={githubInput}
           onChange={handleGithubInputChange}
         />
