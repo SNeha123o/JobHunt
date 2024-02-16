@@ -172,7 +172,7 @@ const MyExperience = () => {
                     />
                    </div>
                    <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Degree<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
-                    <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
+      <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
          <option value="Select">Please Select</option>
          <option value="B.tech">B.tech</option>
          <option value="Bsc">Bsc.</option>
@@ -181,9 +181,9 @@ const MyExperience = () => {
          <option value="Phd">Phd</option>
          <option value="Other">Other</option>
       </select>
-                   </div>
-                   <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Field<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
-                   <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
+          </div>
+        <div className="w-3/5 flex gap-x-24"><label className="w-1/4">Field<span style={{ color: "red", fontSize: "1.5rem" }}>*</span>:</label>
+        <select className="p-2 bg-gray-300 focus:outline-none w-2/5">
          <option value="Select">PleaseSelect</option>
          <option value="ComputerScience">Computer Science</option>
          <option value="Engineering">Engineering</option>
@@ -220,12 +220,11 @@ const MyExperience = () => {
           </form>
         </div>
       ))}
-      <button className='text-blue-700' style={{ marginRight: '1000px', fontSize:'20px'}} onClick={addEducation}>+ Add Education</button>
+    <button className='text-blue-700' style={{ marginRight: '1000px', fontSize:'20px'}} onClick={addEducation}>+ Add Education</button>
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Certifications</h1>
       <Certificates />
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Skills</h1>
      <Skills />
-      
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Websites</h1>
       <Websites />
       <h1 className='font-bold text-3xl my-6' style={{ marginRight: '1000px', fontSize:'20px'}}>Social Media URL</h1>
